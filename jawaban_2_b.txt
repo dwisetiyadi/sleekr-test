@@ -1,0 +1,7 @@
+SELECT
+    SUM( IF( account = 'Penjualan', amount, 0 ) ) AS penjualan,  
+    SUM( IF( account = 'Biaya', amount, 0 ) ) AS biaya, 
+    SUM( IF( account = 'Pembelian', amount, 0 ) ) AS pembelian,
+    SUM( IF( type = 'debit', amount, 0 ) ) - SUM( IF( type = 'credit', amount, 0 ) ) AS saldo
+FROM
+    jurnal

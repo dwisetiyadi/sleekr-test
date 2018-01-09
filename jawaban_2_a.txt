@@ -1,0 +1,6 @@
+SELECT
+    id, account,
+    IF(type = 'debit', amount, '') as debit,
+    IF(type = 'credit', amount, '') as credit
+FROM
+    jurnal
